@@ -1,0 +1,42 @@
+Metatag
+=======
+
+Set page title and meta tags.
+
+
+Example
+=======
+
+Set title in views:
+
+  <% set_title "Articles" %>
+
+Set more (title and meta tags):
+
+  <% set_meta_tags :title => "Articles",
+                   :description => "Best articles",
+                   :keywords => "word 1,word 2" %>
+
+Render title and meta tags in layout:
+
+  <head>
+    <%= render_meta_tags %>
+  </head>
+  
+  or
+  
+  <head>
+    <%= render_meta_tags :site => "Example.com" %>
+  </head>
+  
+This returns:
+
+  <head>
+    <title>Articles | Example.com</title> 
+    <meta content="Best articles" name="description" /> 
+    <meta content="word 1, word 2" name="keywords" />
+  </head>
+
+
+Copyright (c) 2010 Stefan Huska, released under the MIT license
+
