@@ -1,11 +1,5 @@
 module Metatag
   module Helpers
-
-    #def initialize
-    #  @meta_data = {}
-    #  @meta_data[:description] = I18n.t("metatag_plugin.description")
-    #  @meta_data[:keywords]    = I18n.t("metatag_plugin.keywords")
-    #end
     
     def render_meta_tags(options={})
       site = @meta_data[:site] ? @meta_data[:site] : options[:site]
