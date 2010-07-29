@@ -2,7 +2,8 @@ module Metatag
   module Helpers
     
     def render_meta_tags(options={})
-      site = @meta_data[:site] ? @meta_data[:site] : options[:site]
+      @meta_data ||= {}
+      site = @meta_data && @meta_data[:site] ? @meta_data[:site] : options[:site]
       full_title = [title_tag, site].compact.join(" | ")
 
       ret = []
@@ -12,7 +13,7 @@ module Metatag
       return ret.join("\n")
     end
 
-    def set_meta_tags(*args)    
+    def set_meta_tags(*args)
       @meta_data = args.extract_options!.symbolize_keys
     end
     
