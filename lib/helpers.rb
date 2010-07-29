@@ -15,9 +15,9 @@ module Metatag
     def set_meta_tags(*args)    
       @meta_data = args.extract_options!.symbolize_keys
     end
-
+    
     def set_title(title)
-      @meta_data[:title] = title
+      set_meta_tags(:title => title)
     end
     
     def title
